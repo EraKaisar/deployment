@@ -36,7 +36,7 @@ func main() {
 		log.Fatalf("err loading: %v", err)
 	}
 
-	addr := flag.String("addr", ":$PORT", "HTTP network address")
+	addr := flag.String("addr", os.Getenv("PORT"), "HTTP network address")
 	dsn := flag.String("dsn", os.Getenv("DB_LINK"), "MySQL data source name")
 	secret_key := os.Getenv("SECRET_KEY")
 	secret := flag.String("secret", secret_key, "Secret key")
